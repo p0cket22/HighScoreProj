@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class HighScoreGui extends JFrame {
 
-    public static JTextField textField;
+    public static JTextArea textField;
     private String[] arrayToDisplay = {"Item 1", "Item 2", "Item 3", "Item 4"};
 
     public HighScoreGui() {
@@ -16,7 +16,9 @@ public class HighScoreGui extends JFrame {
         setLocationRelativeTo(null);
 
         // Create components
-        textField = new JTextField();
+        textField = new JTextArea();
+        textField.setLineWrap(true);
+        textField.setWrapStyleWord(true);
         textField.setEditable(false);
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(2,2));
@@ -66,12 +68,13 @@ public class HighScoreGui extends JFrame {
                 }catch (Exception x){
                     x.printStackTrace();
                 }
-                textField.setText("Invalid Array Index");
+                //textField.setText("Invalid Array Index");
             }
         }
     }
 
     public static void main(String[] args) {
+        System.out.println(System.getProperty("user.dir"));
         SwingUtilities.invokeLater(() -> {
             HighScoreGui arrayDisplayGUI = new HighScoreGui();
             arrayDisplayGUI.setVisible(true);

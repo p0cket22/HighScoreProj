@@ -1,15 +1,39 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class csv_Array {
-    public static String readin(String Path){
-        
+    public static String readin(Path path){
+        Path Path = path;
+
+        ///List<String[]> rows = new ArrayList<>();
+        StringBuilder formattedString = new StringBuilder();
         try {
-            Scanner scanner = new Scanner(new File(Path));
+            BufferedReader reader  = Files.newBufferedReader(path);
+            String line;
+        while((line = reader.readLine()) != null){
 
-        while(scanner.hasNextLine())
+            String[] values = line.split(",");
+            
+            if (values.length ==2){
+                String scoreboard = String.format("[%s, %s]%n", values);
+                formattedString.append(scoreboard);
+                formattedString.append(System.lineSeparator());
+                System.out.println(formattedString);
+            }
 
-        return null;
+        }
+
+
+    }catch(IOException e){
+        e.printStackTrace();
     }
+    return formattedString.toString();
+
+}
 }
