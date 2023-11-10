@@ -14,7 +14,7 @@ public class HighScorecsv {
     static class Mario{
         public static void method(){
             HighScoreGui.textField.setText("Mario is sending");
-            Path path = FileSystems.getDefault().getPath(absPath+"\\ProjectExtra\\lib\\Snake.csv");
+            Path path = FileSystems.getDefault().getPath(absPath+"\\ProjectExtra\\lib\\Mario.csv");
             String scoreboard= csv_Array.readin(path);
             HighScoreGui.textField.setText(scoreboard);
 
