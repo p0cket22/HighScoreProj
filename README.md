@@ -9,3 +9,4 @@ Some things ive learned while working with this project:
 
 3.moving data out of a csv and into an array
 
+4. figured out how to import 3rd party libraries
