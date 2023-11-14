@@ -35,7 +35,7 @@ public class ClassSorter {
     static class Galega{
         public static void method() throws Exception{
             HighScoreGui.textField.setText("Galega HighScores:\n");
-            String path = (absPath+"\\ProjectExtra\\lib\\Galega.csv");
+            String path = (absPath+"\\lib\\Galega.csv");
             csv_Array.readin(path);
 
         }

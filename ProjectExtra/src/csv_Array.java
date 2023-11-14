@@ -67,9 +67,7 @@ public class csv_Array {
         List<String[]> data = new ArrayList<>();
         data.add(new String[]{Names, Score});
         try (
-            CSVPrinter csvPrinter = new CSVPrinter(new FileWriter(path, true), CSVFormat.DEFAULT.withFirstRecordAsHeader())){
-            
-            
+            CSVPrinter csvPrinter = new CSVPrinter(new FileWriter(path, true), CSVFormat.DEFAULT.withFirstRecordAsHeader())){        
 
             csvPrinter.printRecords(data);
             }
