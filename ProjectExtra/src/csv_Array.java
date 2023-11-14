@@ -2,7 +2,6 @@
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -14,6 +13,7 @@ import org.apache.commons.csv.CSVFormat;
 
 
 public class csv_Array {
+
     public static void readin(String path) throws Exception{
          
         
@@ -31,8 +31,9 @@ public class csv_Array {
 
             pos++;
             HighScoreGui.textField.append("Rank "+pos+":"+record.get("Name")+", Score:"+record.get("Score")+"\n");
-            System.out.println("Name:"+record.get("Name")+", Score:"+record.get("Score"));}
-            System.out.println(records);
+            System.out.println("Name:"+record.get("Name")+", Score:"+record.get("Score"));
+        }
+            //System.out.println(records);
         
 }
     public static List<CSVRecord> readCSV(String path) throws Exception{
@@ -64,7 +65,7 @@ public class csv_Array {
          * printer needed to pass the new data into an array list so the delimiter would match
          */
         List<String[]> data = new ArrayList<>();
-        data.add(new String[]{ Names, Score});
+        data.add(new String[]{Names, Score});
         try (
             CSVPrinter csvPrinter = new CSVPrinter(new FileWriter(path, true), CSVFormat.DEFAULT.withFirstRecordAsHeader())){
             

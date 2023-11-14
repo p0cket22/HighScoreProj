@@ -54,7 +54,7 @@ public class HighScoreGui extends JFrame {
 
     private class ButtonClickListener implements ActionListener {
         private int arrayIndex;
-        Class<?>[] classes ={HighScorecsv.Snake.class,HighScorecsv.Mario.class,HighScorecsv.PacMan.class,HighScorecsv.Galega.class};
+        Class<?>[] classes ={ClassSorter.Snake.class,ClassSorter.Mario.class,ClassSorter.PacMan.class,ClassSorter.Galega.class};
 
         public ButtonClickListener(int arrayIndex) {
             this.arrayIndex = arrayIndex;
