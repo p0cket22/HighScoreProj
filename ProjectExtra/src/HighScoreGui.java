@@ -16,7 +16,7 @@ public class HighScoreGui extends JFrame {
         setLocationRelativeTo(null);
 
         // Create components
-        textField = new JTextArea();
+        textField = new JTextArea(5,10);
         textField.setLineWrap(true);
         textField.setWrapStyleWord(true);
         textField.setEditable(false);
@@ -41,8 +41,8 @@ public class HighScoreGui extends JFrame {
         setLayout(new BorderLayout());
 
         // Add components to the frame
-        add(textField, BorderLayout.CENTER);
-        add(buttonPanel, BorderLayout.WEST);
+        add(textField, BorderLayout.NORTH);
+        add(buttonPanel, BorderLayout.SOUTH);
 
 
 
