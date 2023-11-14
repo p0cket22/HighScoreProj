@@ -1,12 +1,16 @@
 
 
 public class ClassSorter {
+    //static Path p= Paths.get()
     static String absPath= System.getProperty("user.dir");
     static class Snake{
         public static void method() throws Exception{
             /*
              * uses the abs path to allow it so im not hard coding the location of the file
-             * then sends it to the proper array class 
+             * then sends it to the proper array class it should work 
+             * its still a bit messy might try and find a different way to get the files 
+             * worst comes to worst i can just generate the files on the user device and then 
+             * can call off of those
              */
             HighScoreGui.textField.setText("Snake HighScores:\n");
             String path = (absPath+"\\ProjectExtra\\lib\\Snake.csv");
@@ -35,7 +39,7 @@ public class ClassSorter {
     static class Galega{
         public static void method() throws Exception{
             HighScoreGui.textField.setText("Galega HighScores:\n");
-            String path = (absPath+"\\lib\\Galega.csv");
+            String path = (absPath+"\\ProjectExtra\\lib\\Galega.csv");
             csv_Array.readin(path);
 
         }

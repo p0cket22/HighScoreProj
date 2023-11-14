@@ -11,17 +11,17 @@ public class HighScoreGui extends JFrame {
     public HighScoreGui() {
         // Set up the frame
         setTitle("High Scores");
-        setSize(400, 300);
+        setSize(500, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         // Create components
-        textField = new JTextArea(5,10);
+        textField = new JTextArea(50,20);
         textField.setLineWrap(true);
         textField.setWrapStyleWord(true);
         textField.setEditable(false);
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(2,2));
+        buttonPanel.setLayout(new GridLayout(4,1));
 
 
 
@@ -29,20 +29,20 @@ public class HighScoreGui extends JFrame {
         String[] buttonNames={"Snake","Mario","PacMan","Galega"};
         int[] arrayIndex= {1,2,3,4};
 
-
+        /*
+         * creates the buttons and names them by sorting through thr buttonNames array
+         */
         for (int i = 0; i < arrayIndex.length; i++) {
             JButton buttons = new JButton(buttonNames[i]);
             buttons.addActionListener(new ButtonClickListener(arrayIndex[i]-1));
-
-            System.out.println(arrayIndex[i]);
             buttonPanel.add(buttons);
         }
         // Set up the layout
         setLayout(new BorderLayout());
 
         // Add components to the frame
-        add(textField, BorderLayout.NORTH);
-        add(buttonPanel, BorderLayout.SOUTH);
+        add(textField, BorderLayout.EAST);
+        add(buttonPanel, BorderLayout.CENTER);
 
 
 
@@ -74,7 +74,7 @@ public class HighScoreGui extends JFrame {
     }
 
     public static void main(String[] args) {
-        System.out.println(System.getProperty("user.dir"));
+        System.out.println(System.getProperty("user.home"));
         SwingUtilities.invokeLater(() -> {
             HighScoreGui arrayDisplayGUI = new HighScoreGui();
             arrayDisplayGUI.setVisible(true);
